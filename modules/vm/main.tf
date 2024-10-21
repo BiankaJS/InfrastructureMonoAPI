@@ -63,6 +63,17 @@ resource "azurerm_network_security_group" "IN_SG" {
     destination_port_range     = "443"
     destination_address_prefix = "*"
   }
+  security_rule {
+    name                       = "jara"
+    priority                   = 104
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "27017"
+    source_address_prefix      = "*"
+    destination_port_range     = "443"
+    destination_address_prefix = "*"
+  }
 }
 
 #Crear asociacion entre subnet y security_group
