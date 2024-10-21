@@ -15,14 +15,14 @@ services:
       - /volumes/nginx/certs:/etc/nginx/certs:ro
       - /volumes/nginx/vhostd:/etc/nginx/vhost.d
       - /volumes/nginx/html:/usr/share/nginx/html:rw
-      - /var/run/docker.sock:/var/tmp/docker.sock:ro
+      - /var/run/docker.sock:/tmp/docker.sock:ro
 
   lets-encrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
     container_name: 'Lets-Encrypt'
     restart: always
     environment:
-      - NGINX_PROXY_CONTAINER=Reverse_Proxy
+      - NGINX_PROXY_CONTAINER=Reverse-proxy
     volumes:
       - /volumes/nginx/certs:/etc/nginx/certs
       - /volumes/nginx/vhostd:/etc/nginx/vhost.d
