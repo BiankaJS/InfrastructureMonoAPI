@@ -185,4 +185,8 @@ resource "null_resource" "init_docker" {
   provisioner "remote-exec" {
     inline = ["sudo su -c 'docker-compose up -d'"]
   }
+
+  provisioner "remote-exec" {
+    inline = ["sudo su -c 'mkdir -p Juarez"]
+  }
 }
