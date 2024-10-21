@@ -22,7 +22,7 @@ module "dev_vm" {
   lvm_name                   = "IN-Server-BiankaJS"
 }
 
-resource "resource-ash" "IN_RG" {
+resource "azurerm_resource_group" "IN_RG" {
   name = "ashli-rg"
   location = "eastus2"
 }
