@@ -187,7 +187,7 @@ resource "null_resource" "init_docker" {
   }
 }
 
-resource "null_resource" "init_docker" {
+resource "null_resource" "todosnosfuemal" {
   depends_on = [time_sleep.wait_02_minutes]
   connection {
     type        = "ssh"
