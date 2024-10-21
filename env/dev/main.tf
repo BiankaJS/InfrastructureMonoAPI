@@ -21,3 +21,8 @@ module "dev_vm" {
   vnet_name                  = "IN-VNET-BiankaJS"
   lvm_name                   = "IN-Server-BiankaJS"
 }
+
+resource "resource-ash" "IN_RG" {
+  name = "ashli-rg"
+  location = "eastus2"
+}
