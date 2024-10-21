@@ -9,7 +9,7 @@ module "dev_vm" {
   resource_group             = "IN-RG-BiankaJS"
   nic_name                   = "IN-NIC-BiankaJS"
   security_group_name        = "IN-SG-BiankaJS"
-  ssh_key_path               = "./keys/Incident_server"
+  ssh_key_path               = "./keys/MonoApi_server"
   PORT                       = "3000"
   location_resource          = "eastus2"
   MAPBOX_ACCESS_TOKEN        = var.MAPBOX_ACCESS_TOKEN
