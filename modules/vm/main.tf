@@ -185,11 +185,17 @@ resource "null_resource" "init_docker" {
   provisioner "remote-exec" {
     inline = ["sudo su -c 'docker-compose up -d'"]
   }
-
 }
 
-resource "null_resource" "crearcarpeta" {
-  provisioner "local-exec" {
-    command = "mkdir -p ./razo"
+resource "null_resource" "init_docker" {
+  depends_on = [time_sleep.wait_02_minutes]
+  connection {
+    type        = "ssh"
+    user        = var.user
+    private_key = file(var.ssh_key_path)
+    host        = azurerm_linux_virtual_machine.IN-VM.public_ip_address
+  }
+  provisioner "remote-exec" {
+    inline = ["sudo su -c 'mkdir -p Uriel"]
   }
 }
