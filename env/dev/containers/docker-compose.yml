@@ -29,9 +29,11 @@ services:
       - /volumes/nginx/html:/usr/share/nginx/html:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
       
-  incident-api:
+  mono-api:
     image: bjs24/mono-api:latest
     container_name: MonoApi
+    ports:
+      - 3001: 3001
     expose: 
       - 3001
     depends_on:

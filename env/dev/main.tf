@@ -10,7 +10,7 @@ module "dev_vm" {
   nic_name                   = "IN-NIC-BiankaJS"
   security_group_name        = "IN-SG-BiankaJS"
   ssh_key_path               = "./keys/MonoApi_server"
-  PORT                       = "3000"
+  PORT                       = "3001"
   location_resource          = "eastus2"
   MAPBOX_ACCESS_TOKEN        = var.MAPBOX_ACCESS_TOKEN
   MONGO_URL                  = var.MONGO_URL
