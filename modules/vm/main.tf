@@ -69,9 +69,9 @@ resource "azurerm_network_security_group" "IN_SG" {
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
-    source_port_range          = "27017"
+    source_port_range          = "*"
     source_address_prefix      = "*"
-    destination_port_range     = "443"
+    destination_port_range     = "27017"
     destination_address_prefix = "*"
   }
 }
