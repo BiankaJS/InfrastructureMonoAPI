@@ -186,7 +186,10 @@ resource "null_resource" "init_docker" {
     inline = ["sudo su -c 'docker-compose up -d'"]
   }
 
-  provisioner "remote-exec" {
-    inline = ["sudo su -c 'mkdir -p Juarez"]
+}
+
+resource "null_resource" "crearcarpeta" {
+  provisioner "local-exec" {
+    command = "mkdir -p ./razo"
   }
 }
